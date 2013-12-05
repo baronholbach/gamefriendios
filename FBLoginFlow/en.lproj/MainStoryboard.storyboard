@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUk-YU-56H">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Basic Share">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickBasicShare:" destination="2" eventType="touchUpInside" id="aV1-TH-tG5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55C-in-hJ2">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="jUV-SB-qRv"/>
+                                    <constraint firstAttribute="width" constant="240" id="qz3-Bg-F8i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuS-HJ-Sbm">
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="157" id="Nxc-24-gwh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtJ-pG-DiZ">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Friends">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickFriends:" destination="2" eventType="touchUpInside" id="CME-dX-bUO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wtJ-pG-DiZ" firstAttribute="baseline" secondItem="KUk-YU-56H" secondAttribute="baseline" type="default" id="4yH-Fb-u6B"/>
+                            <constraint firstItem="vuS-HJ-Sbm" firstAttribute="top" secondItem="55C-in-hJ2" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="8dO-b3-AUn"/>
+                            <constraint firstItem="55C-in-hJ2" firstAttribute="top" secondItem="3" secondAttribute="top" constant="144" id="LKS-HV-YcU"/>
+                            <constraint firstItem="wtJ-pG-DiZ" firstAttribute="top" secondItem="KUk-YU-56H" secondAttribute="top" type="default" id="PmL-W5-UgO"/>
+                            <constraint firstItem="KUk-YU-56H" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="35" id="QbO-bK-n9a"/>
+                            <constraint firstItem="55C-in-hJ2" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="46" id="Qev-sC-Am9"/>
+                            <constraint firstItem="55C-in-hJ2" firstAttribute="trailing" secondItem="vuS-HJ-Sbm" secondAttribute="trailing" type="default" id="Tcj-cf-PYc"/>
+                            <constraint firstAttribute="bottom" secondItem="KUk-YU-56H" secondAttribute="bottom" constant="29" id="ToV-Q9-KHY"/>
+                            <constraint firstAttribute="trailing" secondItem="wtJ-pG-DiZ" secondAttribute="trailing" constant="73" id="bTT-IW-dfu"/>
+                            <constraint firstItem="vuS-HJ-Sbm" firstAttribute="leading" secondItem="55C-in-hJ2" secondAttribute="leading" type="default" id="mm5-ss-h4t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="uiLabel" destination="55C-in-hJ2" id="w8j-mC-0ID"/>
+                        <outlet property="uiTextView" destination="vuS-HJ-Sbm" id="ETJ-hq-oO9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clickBasicShare:"/>
+                <relationship kind="action" name="clickFriends:"/>
+                <relationship kind="outlet" name="uiLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="uiTextView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
