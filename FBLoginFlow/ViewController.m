@@ -9,51 +9,49 @@
 #import "ViewController.h"
 #import "FriendProtocols.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "XBViewController1.h"
+#import "PSViewController.h"
+#import "settingsViewController.h"
 
 
-@interface ViewController () <FBLoginViewDelegate, FBFriendPickerDelegate>
+@interface ViewController () <FBLoginViewDelegate, UITextFieldDelegate>
 
 @end
 
 @implementation ViewController
+
+int i = 0;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    FBLoginView* loginView = [[FBLoginView alloc]init];
-    loginView.readPermissions = @[@"basic_info",@"email", @"user_likes"];
-    loginView.delegate = self;
-    loginView.frame = CGRectOffset(loginView.frame, 20, 50);
-    loginView.center = self.view.center;
-    self.uiLabel.text=@"Test";
-    [self.view addSubview:loginView];
+
     
-}
+    
+    FBLoginView* loginView = [[FBLoginView alloc]init];
+    loginView.readPermissions = @[@"basic_info"];
+    loginView.delegate = self;
+    loginView.center = CGPointMake(160,330);
+
+    self.networkOptions  = [[NSArray alloc] initWithObjects:@"Xbox Live",@"PlayStation Network",@"Both", nil];
+    }
+    
 
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
-    FBRequest* request = [FBRequest requestForMyFriends];
     
-    request.parameters[@"fields"] =
-        [NSString stringWithFormat:@"%@, installed",request.parameters[@"fields"]];
-    
-    [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-        NSMutableString* string = [[NSMutableString alloc] init];
-        
-        for(id<FBGraphUser> user in result[@"data"])
-        {
-            [string appendFormat:@"%@ installed the app? %@\n", [user first_name], user[@"installed"]?@"Yes":@"No"];
-        }
-        
-         self.uiTextView.text = string;
-    }];
-    
+    [FBLoginView class];
+    NSSet* set = [NSSet setWithObjects:FBLoggingBehaviorFBRequests, nil];
+    [FBSettings setLoggingBehavior:set];
+    loginView.hidden = 1;
+
+
    
 }
 
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
-    self.uiLabel.text=@"Hi, please login to get started.";
+    [self.view addSubview:loginView];
 }
 
 -(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
@@ -61,27 +59,17 @@
     
    // self.uiLabel.text = [NSString stringWithFormat:@"Hi, %@", [user first_name]];
     
-    NSString *greetingText = @"Greetings";
+    //NSString *greetingText = @"Greetings";
+    //self.uiLabel.text = [NSString stringWithFormat:@"Hi, %@ %@ ", greetingText, [user first_name]];
+   
     
-       self.uiLabel.text = [NSString stringWithFormat:@"Hi, %@ %@ ", greetingText, [user first_name]];
     
+    self.networkPicker.hidden = 0;
+    
+    loginView.center = CGPointMake(150,450);
     
 }
 
--(BOOL)friendPickerViewController:(FBFriendPickerViewController *)friendPicker shouldIncludeUser:(id<FBGraphUserExtraFields>)user
-{
-    NSArray *deviceData = user.devices;
-    
-    for(NSDictionary *deviceObject in deviceData)
-    {
-        if ([@"iOS" isEqualToString:deviceObject[@"os"]])
-        {
-            return YES;
-        }
-    }
-    
-    return NO;
-}
 
 - (void)facebookViewControllerCancelWasPressed:(id)sender
 {
@@ -133,5 +121,98 @@
     }];
 }
 
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    
+    // You can add your app-specific url handling code here if needed
+    
+    return wasHandled;
+}
+
+// returns the number of 'columns' to display.
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+// returns the # of rows in each component..
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return 3;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [self.networkOptions objectAtIndex:row];
+}
+    
+    
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    switch (row) {
+        case 0:
+        {
+
+            UILabel *xbLabel = [[UILabel alloc] init];
+
+            xbLabel.frame = CGRectMake(505, -15, 280, 40);
+            [xbLabel setFont:[UIFont fontWithName:@"Futura" size:17.0]];
+            xbLabel.text = @"What is your Xbox Live Gamertag?";
+            self.uiLabel.hidden = 1;
+                       [self.networkPicker addSubview:xbLabel];
+            
+            [UIView animateWithDuration:0.5 animations:^{
+            self.networkPicker.frame = CGRectOffset(self.networkPicker.frame, -480, 0);
+                _xbEntry.frame = CGRectOffset(_xbEntry.frame, -485, 0);
+            }];
+
+            
+        
+            NSLog(@"%d",self.networkPicker.userInteractionEnabled);
+
+
+
+            
+            break;
+        }
+        case 1:
+            //load PSN page
+            break;
+            
+        case 2:
+    {
+                        break;
+    }
+            
+    }
+    
+}
+
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+        _confirmButton.hidden = NO;
+        _networkPicker.hidden = YES;
+        [textField resignFirstResponder];
+
+
+        return YES;
+}
+
+-(IBAction)confirmPressed:(id)sender  {
+    XBViewController1 *xvc =[[XBViewController1 alloc] init];
+    PSViewController *pvc = [[PSViewController alloc]  init];
+    settingsViewController *svc =[[settingsViewController alloc] init];
+
+    
+    UITabBarController *tbc = [[UITabBarController alloc] init];
+    NSArray *viewControllers = [[NSArray alloc] initWithObjects:pvc, xvc, svc, nil];
+    [tbc setViewControllers:viewControllers animated:NO];
+    [self presentViewController:tbc animated:YES completion:NULL];
+
+}
 
 @end
