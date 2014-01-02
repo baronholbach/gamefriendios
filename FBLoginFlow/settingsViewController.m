@@ -7,6 +7,7 @@
 //
 
 #import "settingsViewController.h"
+#import "ViewController1.h"
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface settingsViewController () <FBLoginViewDelegate>
@@ -33,27 +34,13 @@
     FBLoginView* loginView = [[FBLoginView alloc]init];
     loginView.readPermissions = @[@"basic_info"];
     loginView.delegate = self;
-    loginView.center = CGPointMake(160,330);
+    loginView.center = CGPointMake(160,400);
     [self.view addSubview:loginView];
     
+    NSUserDefaults *settings = [[NSUserDefaults alloc] init];
+    _psEntry.text =[settings stringForKey:@"psEntry"];
     
-    
-    FBRequest* request = [FBRequest requestForMyFriends];
-    
-    request.parameters[@"fields"] =
-    [NSString stringWithFormat:@"%@, installed",request.parameters[@"fields"]];
-    
-    [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-        NSMutableString* string = [[NSMutableString alloc] init];
-        
-        for(id<FBGraphUser> user in result[@"data"])
-        {
-            [string appendFormat:@"%@ installed the app? %@\n", [user first_name], user[@"installed"]?@"Yes":@"No"];
-            // [[xvc friendUserNames] addObject:[user first_name]];
-        }
-
-    }];
-
+    _xbEntry.text = [settings stringForKey:@"xbEntry"];
     
     
 }
@@ -73,6 +60,11 @@
     
 }
 
+-(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    ViewController1 *v1 = [storyboard instantiateViewControllerWithIdentifier:@"ViewController1"];
+    [self presentViewController:v1 animated:NO completion:nil];
+}
     
 
 

@@ -1,44 +1,22 @@
 //
-//  AppDelegate.m
-//  FBLoginFlow
+//  TBTAppDelegate.m
+//  TableViewTest
 //
-//  Created by Tracy Liu on 10/20/13.
-//  Copyright (c) 2013 Tracy Liu. All rights reserved.
+//  Created by Tompkins, Nathan on 12/30/13.
+//  Copyright (c) 2013 Tompkins, Nathan. All rights reserved.
 //
 
-#import "AppDelegate.h"
-#import <FacebookSDK/FacebookSDK.h>
+#import "TBTAppDelegate.h"
 
-#import "ViewController1.h"
-
-@implementation AppDelegate
+@implementation TBTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-   
-
-
-
-    
-    [FBLoginView class];
-    NSSet* set = [NSSet setWithObjects:FBLoggingBehaviorFBRequests, nil];
-    [FBSettings setLoggingBehavior:set];
- 
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
-}
-
-
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-    
-    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication fallbackHandler:^(FBAppCall *call) {
-        NSLog(@"In failback handler");
-    }];
-    
-    // add app-specific handling code here
-    return wasHandled;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface settingsViewController : UIViewController
+@interface settingsViewController : UIViewController  <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *xbEntry;
+@property (weak, nonatomic) IBOutlet UITextField *psEntry;
+
 
 @end

@@ -55,7 +55,7 @@
         for(id<FBGraphUser> user in result[@"data"])
         {
             [string appendFormat:@"%@ installed the app? %@\n", [user first_name], user[@"installed"]?@"Yes":@"No"];
-            // [[xvc friendUserNames] addObject:[user first_name]];
+
         }
         
     }];
