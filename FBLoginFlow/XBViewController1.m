@@ -56,7 +56,7 @@
         {
         if ([user.last_name characterAtIndex:0] >= (int)'M') {
         
-        NSString *curName = [[NSString alloc] initWithFormat:@"%@, %@, %@", user.last_name, user.first_name, user.id];
+        NSString *curName = [[NSString alloc] initWithFormat:@"%@, %@, %@", user.last_name, user.name, user.id];
 
 
         [_sortedFriendInfo addObject:curName]; }
@@ -161,7 +161,7 @@
     [xbr setMyID:@"placeholder text"];
     NSArray *splitName = [selectedName componentsSeparatedByString:@","];
 
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://graph.facebook.com/%@/picture", [splitName[2] stringByReplacingOccurrencesOfString:@" " withString:@""]]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?width=100&height=100", [splitName[2] stringByReplacingOccurrencesOfString:@" " withString:@""]]];
     NSLog(@"%@", splitName[2]);
     [xbr setMyProfileImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:url]]];
 }
@@ -200,7 +200,7 @@
     //for (int i = 0; i < [array count]; i++) {
         lastWord = [array componentsSeparatedByString:@","];
         
-        NSString *reverseName  = [[NSString alloc] initWithFormat:@"%@ %@", lastWord[1], lastWord[0]];
+        NSString *reverseName  = [[NSString alloc] initWithFormat:@"%@", lastWord[1]];
 
         
         
