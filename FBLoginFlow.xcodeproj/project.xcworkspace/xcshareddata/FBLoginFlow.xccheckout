@@ -5,13 +5,11 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>5BA4BBBB-AFCE-460D-BD49-8EA222F86C4E</string>
+	<string>437DF638-BED0-4C4A-885B-A69BAD0AB634</string>
 	<key>IDESourceControlProjectName</key>
 	<string>FBLoginFlow</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>11B962F7-13B4-493F-898E-971F465CE899</key>
-		<string>https://github.com/baronholbach/gamefriendios.git</string>
 		<key>93D12837-301E-4B07-AFBE-5E2E5C234339</key>
 		<string>https://github.com/baronholbach/gamefriendios.git</string>
 	</dict>
@@ -19,10 +17,8 @@
 	<string>FBLoginFlow.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>11B962F7-13B4-493F-898E-971F465CE899</key>
-		<string>../../../mlb resources/personal/untitled folder/github/gameff.png</string>
 		<key>93D12837-301E-4B07-AFBE-5E2E5C234339</key>
-		<string>../..</string>
+		<string>../../../mlb resources/personal/untitled folder/github/gameff.png</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/baronholbach/gamefriendios.git</string>
@@ -44,7 +40,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>11B962F7-13B4-493F-898E-971F465CE899</string>
+			<string>93D12837-301E-4B07-AFBE-5E2E5C234339</string>
 			<key>IDESourceControlWCCName</key>
 			<string>gamefriendios</string>
 		</dict>

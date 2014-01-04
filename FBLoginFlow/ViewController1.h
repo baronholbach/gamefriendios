@@ -22,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *psLabel;
 
 
-
 @property (strong, nonatomic) NSArray *networkOptions;
 @property (weak, nonatomic) IBOutlet UIButton *confirmButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;

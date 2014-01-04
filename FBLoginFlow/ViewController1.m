@@ -24,13 +24,11 @@
 int i = 0;
 int currentSeq = 0;
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-
-    
     
     FBLoginView* loginView = [[FBLoginView alloc]init];
     loginView.readPermissions = @[@"basic_info"];
@@ -43,14 +41,64 @@ int currentSeq = 0;
 
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
     
+    NSUserDefaults *setting = [[NSUserDefaults alloc] init];
+    if (![setting objectForKey:@"intro"]) {
     [FBLoginView class];
     NSSet* set = [NSSet setWithObjects:FBLoggingBehaviorFBRequests, nil];
     [FBSettings setLoggingBehavior:set];
     loginView.hidden = 1;
     _uiLabel.hidden = 0;
+    }
+    
+    else {
+        NSUserDefaults *setting = [[NSUserDefaults alloc] init];
+        int network = [setting objectForKey:@"networks"];
+        
+        XBViewController1 *xvc =[[XBViewController1 alloc] init];
+        PSViewController *pvc = [[PSViewController alloc]  init];
+        settingsViewController *svc =[[settingsViewController alloc] init];
+        
+        
+        UITabBarController *tbc = [[UITabBarController alloc] init];
+        
+        
+        switch (network) {
+            
+        case 0:
+            {
+                UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:tbc];
+                nav.navigationBar.hidden = YES;
+                NSArray *viewControllers = [[NSArray alloc] initWithObjects:xvc, svc, nil];
+                [tbc setViewControllers:viewControllers animated:NO];
+                [self presentViewController:nav animated:NO completion:NULL];
+            }
+        break;
+            
+            case 1:
+            {
+                NSArray *viewControllers = [[NSArray alloc] initWithObjects:pvc, svc, nil];
+                [tbc setViewControllers:viewControllers animated:NO];
+                [self presentViewController:tbc animated:NO completion:NULL];
+                NSUserDefaults *setting = [[NSUserDefaults alloc] init];
 
-
-   
+            }
+            break;
+                
+            case 3:
+            {
+                NSArray *viewControllers = [[NSArray alloc] initWithObjects:xvc, pvc, svc, nil];
+                [tbc setViewControllers:viewControllers animated:NO];
+                [self presentViewController:tbc animated:NO completion:NULL];
+                NSUserDefaults *setting = [[NSUserDefaults alloc] init];
+                break;
+            }
+            
+            
+        }
+                 
+        
+        
+    }
 }
 
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
@@ -197,15 +245,14 @@ int currentSeq = 0;
     
     
     if (currentSeq == 1 || currentSeq  == 3) {
-        NSUserDefaults *settings = [[NSUserDefaults alloc] init];
-        [settings setObject:_psEntry.text forKey:@"psEntry"];
+        NSUserDefaults *setting = [[NSUserDefaults alloc] init];
+        [setting setObject:_psEntry.text forKey:@"psEntry"];
         
     }
     
     else {
-        
-            NSUserDefaults *settings = [[NSUserDefaults alloc] init];
-            [settings setObject:_xbEntry.text forKey:@"xbEntry"];
+        NSUserDefaults *setting = [[NSUserDefaults alloc] init];
+        [setting setObject:_xbEntry.text forKey:@"xbEntry"];
         
         
     }
@@ -218,7 +265,9 @@ int currentSeq = 0;
 
 
 -(IBAction)confirmPressed:(id)sender  {
-    
+    NSUserDefaults *setting = [[NSUserDefaults alloc] init];
+    [setting setObject:@"1" forKey:@"intro"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     XBViewController1 *xvc =[[XBViewController1 alloc] init];
     PSViewController *pvc = [[PSViewController alloc]  init];
     settingsViewController *svc =[[settingsViewController alloc] init];
@@ -230,6 +279,8 @@ int currentSeq = 0;
         NSArray *viewControllers = [[NSArray alloc] initWithObjects:xvc, pvc, svc, nil];
         [tbc setViewControllers:viewControllers animated:NO];
         [self presentViewController:tbc animated:YES completion:NULL];
+        NSUserDefaults *setting = [[NSUserDefaults alloc] init];
+        [setting setObject:@"3" forKey:@"networks"];
     }
     
     else if (currentSeq == 1)
@@ -237,6 +288,8 @@ int currentSeq = 0;
         NSArray *viewControllers = [[NSArray alloc] initWithObjects:pvc, svc, nil];
         [tbc setViewControllers:viewControllers animated:NO];
         [self presentViewController:tbc animated:YES completion:NULL];
+        NSUserDefaults *setting = [[NSUserDefaults alloc] init];
+        [setting setObject:@"1" forKey:@"networks"];
     }
     
     else if (currentSeq == 0)
@@ -244,6 +297,8 @@ int currentSeq = 0;
         NSArray *viewControllers = [[NSArray alloc] initWithObjects:xvc, svc, nil];
         [tbc setViewControllers:viewControllers animated:NO];
         [self presentViewController:tbc animated:YES completion:NULL];
+        NSUserDefaults *setting = [[NSUserDefaults alloc] init];
+        [setting setObject:@"0" forKey:@"networks"];
     }
     
 

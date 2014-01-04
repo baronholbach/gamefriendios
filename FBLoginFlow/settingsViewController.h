@@ -13,5 +13,4 @@
 @property (weak, nonatomic) IBOutlet UITextField *xbEntry;
 @property (weak, nonatomic) IBOutlet UITextField *psEntry;
 
-
 @end

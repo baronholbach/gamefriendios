@@ -17,7 +17,7 @@
 		05E2890518144EB500C612DD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05E2890418144EB500C612DD /* Default@2x.png */; };
 		05E2890718144EB500C612DD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05E2890618144EB500C612DD /* Default-568h@2x.png */; };
 		05E2890A18144EB500C612DD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E2890818144EB500C612DD /* MainStoryboard.storyboard */; };
-		05E2890D18144EB500C612DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E2890C18144EB500C612DD /* ViewController.m */; };
+		05E2890D18144EB500C612DD /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E2890C18144EB500C612DD /* ViewController1.m */; };
 		05E2891418144ED100C612DD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E2891318144ED100C612DD /* Accounts.framework */; };
 		05E2891618144ED800C612DD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E2891518144ED800C612DD /* Social.framework */; };
 		05E2891818144EE000C612DD /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E2891718144EE000C612DD /* AdSupport.framework */; };
@@ -31,6 +31,8 @@
 		063534791874837C007B7EF2 /* psn_bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 063534781874837C007B7EF2 /* psn_bg2.png */; };
 		0635347B18748447007B7EF2 /* XboxLIVE_RGBvectorKO_horizontal_2013.png in Resources */ = {isa = PBXBuildFile; fileRef = 0635347A18748447007B7EF2 /* XboxLIVE_RGBvectorKO_horizontal_2013.png */; };
 		063534831874EB3D007B7EF2 /* 400_F_32161739_cLQcViNu7WgHC3yjBDP5sanGGBRRkmtC.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 063534821874EB3D007B7EF2 /* 400_F_32161739_cLQcViNu7WgHC3yjBDP5sanGGBRRkmtC.jpg */; };
+		066C93FB18765C97005A365F /* XBSelectedRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 066C93F918765C97005A365F /* XBSelectedRow.m */; };
+		066C93FC18765C97005A365F /* XBSelectedRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066C93FA18765C97005A365F /* XBSelectedRow.xib */; };
 		06724E51185EA01C003A3CA0 /* xboxTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06724E50185EA01C003A3CA0 /* xboxTestViewController.m */; };
 		06B9434E185D7AEA007B0D1E /* settingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B9434C185D7AEA007B0D1E /* settingsViewController.m */; };
 		06B9434F185D7AEA007B0D1E /* settingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B9434D185D7AEA007B0D1E /* settingsViewController.xib */; };
@@ -41,7 +43,6 @@
 		06B94388185E653C007B0D1E /* tab_psn.png in Resources */ = {isa = PBXBuildFile; fileRef = 06B94387185E653C007B0D1E /* tab_psn.png */; };
 		06B9438B185E65FE007B0D1E /* tab_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 06B94389185E65FE007B0D1E /* tab_settings.png */; };
 		06B9438C185E65FE007B0D1E /* tab_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06B9438A185E65FE007B0D1E /* tab_settings@2x.png */; };
-		06B9438E185E738C007B0D1E /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B9438D185E738C007B0D1E /* ViewController.xib */; };
 		06D3EE211858131100435759 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 06D3EE201858131100435759 /* gradient.png */; };
 		06D3EE231858142100435759 /* gff_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 06D3EE221858142100435759 /* gff_logo.png */; };
 		06E70FEC1867F19F00D58961 /* XBViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 06E70FEB1867F19F00D58961 /* XBViewController1.m */; };
@@ -63,8 +64,8 @@
 		05E2890418144EB500C612DD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		05E2890618144EB500C612DD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		05E2890918144EB500C612DD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		05E2890B18144EB500C612DD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		05E2890C18144EB500C612DD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		05E2890B18144EB500C612DD /* ViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
+		05E2890C18144EB500C612DD /* ViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
 		05E2891318144ED100C612DD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		05E2891518144ED800C612DD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		05E2891718144EE000C612DD /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -80,6 +81,9 @@
 		0635347A18748447007B7EF2 /* XboxLIVE_RGBvectorKO_horizontal_2013.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XboxLIVE_RGBvectorKO_horizontal_2013.png; sourceTree = "<group>"; };
 		0635347C1874A493007B7EF2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		063534821874EB3D007B7EF2 /* 400_F_32161739_cLQcViNu7WgHC3yjBDP5sanGGBRRkmtC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 400_F_32161739_cLQcViNu7WgHC3yjBDP5sanGGBRRkmtC.jpg; sourceTree = "<group>"; };
+		066C93F818765C97005A365F /* XBSelectedRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBSelectedRow.h; sourceTree = "<group>"; };
+		066C93F918765C97005A365F /* XBSelectedRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBSelectedRow.m; sourceTree = "<group>"; };
+		066C93FA18765C97005A365F /* XBSelectedRow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XBSelectedRow.xib; sourceTree = "<group>"; };
 		06724E4F185EA01C003A3CA0 /* xboxTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xboxTestViewController.h; sourceTree = "<group>"; };
 		06724E50185EA01C003A3CA0 /* xboxTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xboxTestViewController.m; sourceTree = "<group>"; };
 		06B9434B185D7AEA007B0D1E /* settingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingsViewController.h; sourceTree = "<group>"; };
@@ -92,7 +96,6 @@
 		06B94387185E653C007B0D1E /* tab_psn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_psn.png; sourceTree = "<group>"; };
 		06B94389185E65FE007B0D1E /* tab_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_settings.png; sourceTree = "<group>"; };
 		06B9438A185E65FE007B0D1E /* tab_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_settings@2x.png"; sourceTree = "<group>"; };
-		06B9438D185E738C007B0D1E /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		06D3EE201858131100435759 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient.png; sourceTree = "<group>"; };
 		06D3EE221858142100435759 /* gff_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gff_logo.png; sourceTree = "<group>"; };
 		06E70FEA1867F19F00D58961 /* XBViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBViewController1.h; sourceTree = "<group>"; };
@@ -159,6 +162,9 @@
 		05E288F618144EB500C612DD /* FBLoginFlow */ = {
 			isa = PBXGroup;
 			children = (
+				066C93F818765C97005A365F /* XBSelectedRow.h */,
+				066C93F918765C97005A365F /* XBSelectedRow.m */,
+				066C93FA18765C97005A365F /* XBSelectedRow.xib */,
 				06E70FED1867F22A00D58961 /* PSViewController.h */,
 				06E70FEE1867F22A00D58961 /* PSViewController.m */,
 				06E70FEA1867F19F00D58961 /* XBViewController1.h */,
@@ -169,9 +175,8 @@
 				06B9434C185D7AEA007B0D1E /* settingsViewController.m */,
 				06B9434D185D7AEA007B0D1E /* settingsViewController.xib */,
 				05E2890818144EB500C612DD /* MainStoryboard.storyboard */,
-				05E2890B18144EB500C612DD /* ViewController.h */,
-				05E2890C18144EB500C612DD /* ViewController.m */,
-				06B9438D185E738C007B0D1E /* ViewController.xib */,
+				05E2890B18144EB500C612DD /* ViewController1.h */,
+				05E2890C18144EB500C612DD /* ViewController1.m */,
 				05E288F718144EB500C612DD /* Supporting Files */,
 				06724E4F185EA01C003A3CA0 /* xboxTestViewController.h */,
 				06724E50185EA01C003A3CA0 /* xboxTestViewController.m */,
@@ -277,10 +282,10 @@
 				05E2890518144EB500C612DD /* Default@2x.png in Resources */,
 				06B9437C185E5FB6007B0D1E /* tab_xbox@2x.png in Resources */,
 				0628FD9318554E9600D591A3 /* FB-f-Logo__blue_1024.png in Resources */,
-				06B9438E185E738C007B0D1E /* ViewController.xib in Resources */,
 				0635347B18748447007B7EF2 /* XboxLIVE_RGBvectorKO_horizontal_2013.png in Resources */,
 				0628FD9718554E9600D591A3 /* Screen Shot 2013-11-29 at 4.57.45 PM.png in Resources */,
 				06B9438B185E65FE007B0D1E /* tab_settings.png in Resources */,
+				066C93FC18765C97005A365F /* XBSelectedRow.xib in Resources */,
 				06B9438C185E65FE007B0D1E /* tab_settings@2x.png in Resources */,
 				06B94386185E6507007B0D1E /* tab_psn@2x.png in Resources */,
 				063534791874837C007B7EF2 /* psn_bg2.png in Resources */,
@@ -305,7 +310,8 @@
 				05E288FD18144EB500C612DD /* main.m in Sources */,
 				06B9434E185D7AEA007B0D1E /* settingsViewController.m in Sources */,
 				05E2890118144EB500C612DD /* AppDelegate.m in Sources */,
-				05E2890D18144EB500C612DD /* ViewController.m in Sources */,
+				05E2890D18144EB500C612DD /* ViewController1.m in Sources */,
+				066C93FB18765C97005A365F /* XBSelectedRow.m in Sources */,
 				06E70FEC1867F19F00D58961 /* XBViewController1.m in Sources */,
 				06E70FEF1867F22A00D58961 /* PSViewController.m in Sources */,
 			);

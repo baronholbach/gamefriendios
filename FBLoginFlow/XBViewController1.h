@@ -10,5 +10,12 @@
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface XBViewController1 : FBFriendPickerViewController <FBFriendPickerDelegate>
+@property NSMutableArray *curFriendInfo;
+@property NSMutableArray *sortedFriendInfo;
+@property NSArray *finalSortedFriendInfo;
+@property NSArray *sortedArray;
+
+//- (NSArray *) alphaSort:(NSArray *)array;
+- (NSString *) nameSwap:(NSString *)array;
 
 @end
