@@ -23,7 +23,7 @@
 
 int i = 0;
 int currentSeq = 0;
-
+//XXX
 
 - (void)viewDidLoad
 {
